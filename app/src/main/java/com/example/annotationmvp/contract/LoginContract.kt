@@ -13,5 +13,6 @@ interface LoginContract {
 
     interface LoginView<LoginPresenter> : BaseView<LoginPresenter> {
         fun upData(loginBean: LoginBean)
+        fun onError(string: String?)
     }
 }

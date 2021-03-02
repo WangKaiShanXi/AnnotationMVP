@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity(), LoginContract.LoginView<LoginContract
         text_v.setOnClickListener {
             var map =HashMap<String,Any>()
                 map["phone"]=18536088117
-                map["dtype"]="json"
+                map["key"]="ea0487d116037a807113e157f7b36df9"
             loginPresenter?.login("http://apis.juhe.cn", "/mobile/get",map) }
     }
 
@@ -27,6 +27,10 @@ class LoginActivity : AppCompatActivity(), LoginContract.LoginView<LoginContract
 
     override fun upData(loginBean: LoginBean) {
         text_v.text = loginBean.result.city
+    }
+
+    override fun onError(string: String?) {
+        text_v.text = string
     }
 
 

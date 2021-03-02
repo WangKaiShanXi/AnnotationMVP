@@ -20,7 +20,7 @@ class LoginPresenterImpl(var view: LoginView<LoginPresenter>) : LoginPresenter {
             }
 
             override fun onError(str: String?) {
-
+                view.onError(str)
             }
 
             override fun onData(str: String?) {
